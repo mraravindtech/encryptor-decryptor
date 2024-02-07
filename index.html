@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption and Decryption</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        textarea {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Encryption and Decryption</h1>
+        
+        <div class="form-group">
+            <label for="inputText">Enter Text:</label>
+            <textarea class="form-control" id="inputText" rows="4"></textarea>
+        </div>
+        
+        <label for="inputText">This will encrypt and decrypt the given data into hash value using base64 encryption.</label><br>
+
+        <button class="btn btn-primary" onclick="convertToBase64()">Encrypt</button>
+        <button class="btn btn-success" onclick="decryptBase64()">Decrypt</button>
+
+        <p id="outputText" class="mt-3"></p>
+    </div>
+
+   
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        function convertToBase64() {
+            const inputText = document.getElementById("inputText").value;
+            const base64Text = btoa(inputText);
+            document.getElementById("outputText").innerText = `Encoded: ${base64Text}`;
+        }
+
+        function decryptBase64() {
+            const base64Text = document.getElementById("inputText").value;
+            const originalText = atob(base64Text);
+            document.getElementById("outputText").innerText = `Decoded: ${originalText}`;
+        }
+    </script>
+</body>
+</html>
