@@ -31,7 +31,11 @@
             <textarea class="form-control" id="inputText" rows="4"></textarea>
         </div>
         
-        <label for="inputText">This will encrypt and decrypt the given data into hash value using base64 encryption.</label><br>
+        <label for="inputText">This web application designed for encryption and decryption of text using Base64 encoding. The project is implemented using HTML, CSS, and JavaScript, along with the Bootstrap framework for styling.It utilizes external libraries for styling and JavaScript functionality, including Bootstrap CSS and JavaScript, as well as jQuery and Popper.js Encryption: Users can input text into the textarea provided under the "Enter Text" label.
+            Base64 Encoding: Clicking the "Encrypt" button triggers the `convertToBase64()` function, which encodes the input text using Base64 encoding.
+            	Decryption: Users can decrypt Base64 encoded text by clicking the "Decrypt" button.
+            	Base64 Decoding: The `decryptBase64()` function decodes the Base64 encoded text back to its original form.The `convertToBase64()` function encodes the input text using Base64 encoding and displays the encoded text in the output area.
+                The `decryptBase64()` function decodes the Base64 encoded text back to its original form and displays it in the output area.</label><br>
 
         <button class="btn btn-primary" onclick="convertToBase64()">Encrypt</button>
         <button class="btn btn-success" onclick="decryptBase64()">Decrypt</button>
