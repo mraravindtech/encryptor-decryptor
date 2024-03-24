@@ -24,26 +24,24 @@
 </head>
 <body>
     <div class="container">
-        <h1>Encryption and Decryption</h1>
-        
-        <div class="form-group">
-            <label for="inputText">Enter Text:</label>
-            <textarea class="form-control" id="inputText" rows="4"></textarea>
+        <div class="row">
+            <div class="col-12">
+                <h1 class="mt-3">Encryption and Decryption</h1>
+                
+                <div class="form-group">
+                    <label for="inputText">Enter Text:</label>
+                    <textarea class="form-control" id="inputText" rows="4"></textarea>
+                </div>
+                <label for="inputText">This web application is designed for encryption and decryption of text using Base64 encoding. The project is implemented using HTML, CSS, and JavaScript, along with the Bootstrap framework for styling. It utilizes external libraries for styling and JavaScript functionality, including Bootstrap CSS and JavaScript, as well as jQuery and Popper.js. Encryption: Users can input text into the textarea provided under the "Enter Text" label. Base64 Encoding: Clicking the "Encrypt" button triggers the `convertToBase64()` function, which encodes the input text using Base64 encoding. Decryption: Users can decrypt Base64 encoded text by clicking the "Decrypt" button. Base64 Decoding: The `decryptBase64()` function decodes the Base64 encoded text back to its original form. The `convertToBase64()` function encodes the input text using Base64 encoding and displays the encoded text in the output area. The `decryptBase64()` function decodes the Base64 encoded text back to its original form and displays it in the output area.</label><br>
+                <button class="btn btn-primary" onclick="convertToBase64()">Encrypt</button>
+                <button class="btn btn-success" onclick="decryptBase64()">Decrypt</button>
+                <button class="btn btn-danger" onclick="clearText()">Clear</button> <!-- Add clear button -->
+                
+                <p id="outputText" class="mt-3"></p>
+            </div>
         </div>
-        
-        <label for="inputText">This web application designed for encryption and decryption of text using Base64 encoding. The project is implemented using HTML, CSS, and JavaScript, along with the Bootstrap framework for styling.It utilizes external libraries for styling and JavaScript functionality, including Bootstrap CSS and JavaScript, as well as jQuery and Popper.js Encryption: Users can input text into the textarea provided under the "Enter Text" label.
-            Base64 Encoding: Clicking the "Encrypt" button triggers the `convertToBase64()` function, which encodes the input text using Base64 encoding.
-            	Decryption: Users can decrypt Base64 encoded text by clicking the "Decrypt" button.
-            	Base64 Decoding: The `decryptBase64()` function decodes the Base64 encoded text back to its original form.The `convertToBase64()` function encodes the input text using Base64 encoding and displays the encoded text in the output area.
-                The `decryptBase64()` function decodes the Base64 encoded text back to its original form and displays it in the output area.</label><br>
-
-        <button class="btn btn-primary" onclick="convertToBase64()">Encrypt</button>
-        <button class="btn btn-success" onclick="decryptBase64()">Decrypt</button>
-
-        <p id="outputText" class="mt-3"></p>
     </div>
 
-   
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -59,6 +57,11 @@
             const base64Text = document.getElementById("inputText").value;
             const originalText = atob(base64Text);
             document.getElementById("outputText").innerText = `Decoded: ${originalText}`;
+        }
+        
+        function clearText() { // Function to clear the textarea
+            document.getElementById("inputText").value = ""; // Set textarea value to empty string
+            document.getElementById("outputText").innerText = ""; // Clear the output text
         }
     </script>
 </body>
